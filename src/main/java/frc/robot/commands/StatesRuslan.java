@@ -28,6 +28,12 @@ public class StatesRuslan{
             new Start(2f),
 
             new OMS(-500, 16, -1, 137),
+            new TimerCount(5f),
+            new OMS(-990,-1,-1,-1),
+            new TimerCount(5f),
+            new OMS(-680,-1,-1,-1),
+            new TimerCount(5f),
+            new OMS(-330,-1,-1,-1),
             // new OMS(0,-1,-1,-1),
             // new OMS(-500, 16, -1, 137),
             // new OMS(0,-1,-1,-1),

@@ -36,25 +36,25 @@ public class StatesFinalFinal{
             new SensorsTest(ikr, 12, 0, 1),
             new Reset(0,0,0),
 
-            new Transition(),  
+            new Transition(),   
         },
         {// from checkpoint to zone 1 // 1
             
-            new Odometry(abs, -1755, 880, 180, true),
+            new Odometry(abs, -1755, 910, 180, true),
 
-            new Odometry(abs, -990, 880, 180, true),
+            new Odometry(abs, -990, 910, 180, true),
             // new Odometry(abs, -455, 870, 90, true), 
 
-            new Reset(-990, 880, 180),
+            new Reset(-990, 900, 180),
  
             new Transition(),  
         },
         { // from checkpoint to zone 2 // 2 
-            new Odometry(abs, -1755, 872, 180, true),
+            new Odometry(abs, -1755, 900, 180, true),
 
-            new Odometry(abs, -2406, 872,180,true),
+            new Odometry(abs, -2406, 900,180,true),
 
-            new Reset(-2406, 872, 180),
+            new Reset(-2406, 900, 180),
 
         // new Reset(-1080, 2150, 90), 
               
@@ -62,9 +62,9 @@ public class StatesFinalFinal{
         },
         { // from checkpoint to zone 3 // 3
 
-            new Odometry(abs, -1897, 150, 0, true),
+            new Odometry(abs, -1897, 220, 0, true),
 
-            new Reset(-1897, 150, 0),
+            new Reset(-1897, 220, 0),
  
             new Transition(),    
         }, 
@@ -87,7 +87,7 @@ public class StatesFinalFinal{
         {// frist tree to checpoint // 8
             new SetOMS(5),
             
-            new Odometry(500, 0, 0),
+            // new Odometry(500, 0, 0),
 
             new Odometry(abs, -470, 0, 90, true),
 
@@ -101,7 +101,7 @@ public class StatesFinalFinal{
         {// second tree to checpoint // 9
            new SetOMS(5), 
 
-           new Odometry(-500, 0, 0),
+        //    new Odometry(-500, 0, 0),
 
             new Odometry(abs, -470, 0, 90, true),
  
@@ -162,8 +162,8 @@ public class StatesFinalFinal{
         },
 
         { // 13 CheckPointToUnripTrash
-            new Odometry(abs, -300, 0, 90, true),
-            new Odometry(abs, -300, 870, 0, true), 
+            new Odometry(abs, -250, 0, 90, true),
+            new Odometry(abs, -250, 870, 0, true), 
             new SensorsTest(ikr, 12, 0, 1),
 
             new Odometry(0,0, 90),
@@ -196,6 +196,10 @@ public class StatesFinalFinal{
         },
         { // 15 AppleTrashToCheckPoint
 
+            new Odometry(abs, -3227, 576, 0, true),
+
+            new Odometry(abs, -470, 576, 0, true),
+
             new Odometry(abs, -470, 0, 90, true),
 
             new SensorsTest(sonicb,25,0,0),
@@ -208,6 +212,8 @@ public class StatesFinalFinal{
         { // 16 PearTrashToCheckPoint
 
             new Odometry(abs, -3227, 576, 0, true),
+
+            new Odometry(abs, -470, 576, 0, true),
 
             new Odometry(abs, -470, 0, 90, true),
 

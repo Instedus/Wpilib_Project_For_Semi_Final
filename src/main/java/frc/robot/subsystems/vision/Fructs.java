@@ -224,14 +224,19 @@ public class Fructs {
             return 7;
         }
         else if (yellow) {
-            return 4;
-        }
-        else if (red) {
-            if (fruitSize.equals("big")) {
-                return 5;
-            } else {
+            if(fruitSize.equals("big")){
+                return 4;
+            }
+            else{
                 return 6;
             }
+        }
+        else if (red) {
+            // if (fruitSize.equals("big")) {
+                return 5;
+            // } else {
+            //     return 6;
+            // }
         }else {
             return 0;
         } 
