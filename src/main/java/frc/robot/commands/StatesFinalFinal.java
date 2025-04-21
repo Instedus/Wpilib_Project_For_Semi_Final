@@ -62,9 +62,9 @@ public class StatesFinalFinal{
         },
         { // from checkpoint to zone 3 // 3
 
-            new Odometry(abs, -1897, 220, 0, true),
+            new Odometry(abs, -1897, 175, 0, true),
 
-            new Reset(-1897, 220, 0),
+            new Reset(-1897, 175, 0),
  
             new Transition(),    
         }, 
@@ -163,7 +163,7 @@ public class StatesFinalFinal{
 
         { // 13 CheckPointToUnripTrash
             new Odometry(abs, -250, 0, 90, true),
-            new Odometry(abs, -250, 870, 0, true), 
+            new Odometry(abs, -250, 600, 0, true), 
             new SensorsTest(ikr, 12, 0, 1),
 
             new Odometry(0,0, 90),
@@ -257,7 +257,7 @@ public class StatesFinalFinal{
             // oms fruit in 
             new OMS(-2, 17, 110,-1),
             new TimerCount(0.5f),
-            new Camera("centre"),
+            new Camera("centre"), 
             // new Camera("main_detect"), 
             new OMS(-1,-1,110,-1),
             new OMS(-1,-1,110,-1),

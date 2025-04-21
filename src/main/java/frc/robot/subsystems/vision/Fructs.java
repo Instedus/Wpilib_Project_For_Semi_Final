@@ -106,12 +106,12 @@ public class Fructs {
         else if (searchForColorYellow(yellowFrame, yellowLow, yellowHigh))
         {
             offsetX = (float) cx - centerX;
-            offsetY = (float) (cy - centerY) - 60;
+            offsetY = (float) (cy - centerY);
         }
         else if (searchForColorRed(redFrame, redLow, redHigh))
         {
             offsetX = (float) cx - centerX;
-            offsetY = (float) cy - centerY - 50;
+            offsetY = (float) cy - centerY;
         }
         else 
         {
