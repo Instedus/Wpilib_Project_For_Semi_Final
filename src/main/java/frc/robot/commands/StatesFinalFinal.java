@@ -130,7 +130,7 @@ public class StatesFinalFinal{
             new SensorsTest(ikr, 12, 0, 1),
             new Reset(-1, -1, 180),
             new Odometry(0, 0, 90),
-            new OMS(-1, 21, 225, 80),
+            new OMS(-1, 14, 225, 80),
             new OMS(-1, -1, 110, 80),
             new TimerCount(0.5f), 
             // new OMS(-1, 1, 110, 80), 
@@ -152,7 +152,7 @@ public class StatesFinalFinal{
 
             // new Odometry(400, 0, 0),
 
-            new OMS(-1, 21, 225, 80),
+            new OMS(-1, 14, 225, 80),
             new OMS(-1, -1, 110, 80),
             new TimerCount(0.5f), 
             // new OMS(-1, 1, 110, 80),
@@ -168,7 +168,7 @@ public class StatesFinalFinal{
 
             new Odometry(0,0, 90),
 
-            new OMS(-1, 17, 225, 80),
+            new OMS(-1, 14, 225, 80),
             new OMS(-1, -1, 110, 80),
             new TimerCount(0.5f), 
             // new OMS(-1, 1, 110, 80),
@@ -186,7 +186,7 @@ public class StatesFinalFinal{
 
             new Odometry(0, 0, 90),
             // new Odometry(-350, 0, 0),
-            new OMS(-1, 21, 225, 80),
+            new OMS(-1, 14, 225, 80),
             new OMS(-1, -1, 110, 80),
             new TimerCount(0.5f), 
             // new OMS(-1, 1, 110, 80),

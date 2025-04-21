@@ -48,7 +48,7 @@ public class InitLogic {
     };
 
     private final String[][] TREE = {
-        { "none","none","none", },
+        { "none","none",FRUIT[0], },
         { "none","none","none", },
         { "none","none","none", }, 
     };   
@@ -78,13 +78,13 @@ public class InitLogic {
 
     private final float[][][] toTree = { 
         {
-            {-150, -130}, {-10, 0}, {-90,-175}
+            {-150, -130}, {-10, 0}, {100,-150}
         },
         {
-            {-150, -130}, {-10, 0}, {-90,-175}
+            {-150, -130}, {-10, 0}, {90,-175}
         },
         {
-            {-150, -130}, {-10, 0}, {-90,-175} 
+            {-150, -130}, {-10, 0}, {90,-175} 
         },
     };
 
