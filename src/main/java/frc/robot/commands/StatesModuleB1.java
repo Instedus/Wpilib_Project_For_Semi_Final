@@ -28,33 +28,33 @@ public class StatesModuleB1{
         {
             
             new Start(2f),
-            // // new Reset(0,0,0),
-            // // //квадрат
+            // // // new Reset(0,0,0),
+            // // // //квадрат
 
-            new Odometry(abs, 1000, 0, 90, true),
-            new Odometry(abs, 1000, 1000, 180, true),
-            new Odometry(abs, 0, 1000, 270, true),
-            new Odometry(abs, 0, 0, 360, true),
+            // new Odometry(abs, 1150, 0, 90, true),
+            // new Odometry(abs, 1150, 1150, 180, true),
+            // new Odometry(abs, 0, 1150, 270, true),
+            // new Odometry(abs, 0, 0, 360, true),
 
-            new End(),
-            new StartTransition(2f),
+            // new End(),
+            // new StartTransition(2f),
             // // // new Reset(0,0,0),
  
             // // // // // //проезд на 1 метр вперед
             
-            new Odometry(abs, 1065, 0, 0, true),
+            // new Odometry(abs, 1400, 0, 0, true),
 
-            new End(),
-            new StartTransition(2f),
+            // new End(),
+            // new StartTransition(2f),
             // // // // // поворот
-            new Odometry(0, 0, 90),
-            new Odometry(0, 0, 90),
-            new Odometry(0, 0, 90),
-            new Odometry(0, 0, 90),
-            new Odometry(0, 0, 90),
+            // new Odometry(0, 0, 90),
+            // new Odometry(0, 0, 90),
+            // new Odometry(0, 0, 90),
+            // new Odometry(0, 0, 90),
+            // new Odometry(0, 0, 90),
 
-            new End(),
-            new StartTransition(2f),
+            // new End(),
+            // new StartTransition(2f),
             // // // // // датчики
             new Lights(true),
 

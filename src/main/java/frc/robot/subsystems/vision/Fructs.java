@@ -18,8 +18,8 @@ import frc.robot.RobotContainer;
 
 public class Fructs {
 
-    static Scalar greenLow = new Scalar(26, 69, 49);   // ДНЕВНЫЕ МАСКИ
-    static Scalar greenHigh = new Scalar(77, 149, 134);
+    static Scalar greenLow = new Scalar(0, 86, 130);   // ДНЕВНЫЕ МАСКИ
+    static Scalar greenHigh = new Scalar(80, 255, 236);
 
     //// static Scalar yellowLow = new Scalar(10, 125, 103);
     //// static Scalar yellowHigh = new Scalar(55, 234, 245);
@@ -28,20 +28,19 @@ public class Fructs {
     //// static Scalar redHigh =new Scalar(188, 255, 255);
 
     
-    static Scalar yellowLow = new Scalar(0, 108, 140);
-    static Scalar yellowHigh = new Scalar(43, 212, 245);
+    static Scalar yellowLow = new Scalar(0, 100, 160);
+    static Scalar yellowHigh = new Scalar(55, 212, 255);
 
 
     // static Scalar redLow = new Scalar(0, 118, 160);
     // static Scalar redHigh =new Scalar(191, 196, 232);
 
-    static Scalar redLow = new Scalar(123, 40, 26);
-    static Scalar redHigh =new Scalar(236, 251, 143);
+    static Scalar redLow = new Scalar(123, 49, 26);
+    static Scalar redHigh =new Scalar(236, 251, 200);
  
-    static Scalar purpleLow = new Scalar(123, 70, 60);
-    static Scalar purpleHigh = new Scalar(137, 177, 148);
-
-
+    static Scalar purpleLow = new Scalar(104, 78, 52);
+    //104,32,74,136,182,103
+    static Scalar purpleHigh = new Scalar(180, 160, 192);
 
     static Scalar greenLowTree = new Scalar(26, 140, 99);    // НОЧНЫЕ МАСКИ
     static Scalar greenHighTree = new Scalar(60, 237, 219);
@@ -103,16 +102,22 @@ public class Fructs {
             }   
         }
 
+        // else if (searchForColorGreen(greenFrame, greenLow, greenHigh))
+        //     {
+        //         offsetX = (float) cx - centerX;
+        //         offsetY = (float) cy - centerY - 50;
+        //     }
+
         else if (searchForColorYellow(yellowFrame, yellowLow, yellowHigh))
         {
             offsetX = (float) cx - centerX;
-            offsetY = (float) (cy - centerY);
+            offsetY = (float) (cy - centerY) - 60;
         }
-        else if (searchForColorRed(redFrame, redLow, redHigh))
-        {
-            offsetX = (float) cx - centerX;
-            offsetY = (float) cy - centerY;
-        }
+        // else if (searchForColorRed(redFrame, redLow, redHigh))
+        // {
+        //     offsetX = (float) cx - centerX;
+        //     offsetY = (float) cy - centerY - 50;
+        // }
         else 
         {
             offsetX = 0;
@@ -201,34 +206,43 @@ public class Fructs {
         Mat redFrame = frame.clone();
         Mat yellowFrame = frame.clone();
         Mat purpleFrame = frame.clone();
+        Mat greenFrame = frame.clone();
 
         int purple = detectPurple(purpleFrame);
-        // boolean green = searchForColorGreen(greenFrame, greenLow, greenHigh);
+        boolean green = searchForColorGreen(greenFrame, greenLow, greenHigh);
         boolean red = searchForColorRed(redFrame, redLow, redHigh);
         boolean yellow = searchForColorYellow(yellowFrame, yellowLow, yellowHigh);
+        // boolean green = searchForColorGreen(greenFrame, greenLow, greenHigh);
 
         // if (green) {
-        //     if (fruitSize.equals("big")) {
-        //         boolean stem = detectStem(frame, finalScalarColorLow, finalScalarColorHigh, cx, cy);
-        //         if (stem) {
-        //             return 3;
-        //         } else {
-        //             return 1;
-        //         }
-        //     } else {
+        //     // if (fruitSize.equals("big")) {
+        //     //     boolean stem = detectStem(frame, finalScalarColorLow, finalScalarColorHigh, cx, cy);
+        //     //     if (stem) {
+        //     //         return 3;
+        //     //     } else {
+        //     //         return 1;
+        //     //     }
+        //     // } else {
         //         return 2;
-        //     }
+        //     // }
         // }
 
         if (purple == 1) {
             return 7;
         }
         else if (yellow) {
-            if(fruitSize.equals("big")){
-                return 4;
+            // if(fruitSize.equals("big")){
+            //     return 4;
+            // }
+            // else{
+            //     return 6; // 6
+            // }
+
+            if(!fruitSize.equals("big")){
+                return 6;
             }
             else{
-                return 6;
+                return 0;
             }
         }
         else if (red) {
@@ -237,7 +251,8 @@ public class Fructs {
             // } else {
             //     return 6;
             // }
-        }else {
+        }
+        else {
             return 0;
         } 
     }
@@ -543,6 +558,8 @@ public class Fructs {
 
         Core.bitwise_or(maskRed, maskGreen, combine);
         Core.bitwise_or(combine, maskYellow, combine);
+
+        RobotContainer.server.maskColor.putFrame(combine);
 
         Mat kernel = Imgproc.getStructuringElement(Imgproc.MORPH_ELLIPSE, new Size(15, 15));
 

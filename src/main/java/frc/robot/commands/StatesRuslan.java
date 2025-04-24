@@ -9,6 +9,7 @@ import frc.robot.cases.Odometry;
 import frc.robot.cases.Reset;
 import frc.robot.cases.SensorsTest;
 import frc.robot.cases.Start;
+import frc.robot.cases.StartCloseOMS;
 import frc.robot.cases.Switch;
 import frc.robot.cases.TimerCount;
 import frc.robot.cases.TimerDrive;
@@ -25,15 +26,16 @@ public class StatesRuslan{
 
     public static IState[][] states = new IState[][] { 
         {
-            new Start(2f),
 
+            
+            new Start(2f),
             new OMS(-500, 16, -1, 137),
-            new TimerCount(5f),
-            new OMS(-990,-1,-1,-1),
-            new TimerCount(5f),
-            new OMS(-680,-1,-1,-1),
-            new TimerCount(5f),
-            new OMS(-330,-1,-1,-1),
+            // new TimerCount(5f),
+            // new OMS(-990,-1,-1,-1),
+            // new TimerCount(5f),
+            // new OMS(-680,-1,-1,-1),
+            // new TimerCount(5f),
+            // new OMS(-330,-1,-1,-1),
             // new OMS(0,-1,-1,-1),
             // new OMS(-500, 16, -1, 137),
             // new OMS(0,-1,-1,-1),

@@ -28,84 +28,81 @@ public class StatesModuleB2{
     public static IState[][] states = new IState[][] { 
         {
             // //в2
-            new Start(2f),
-            // // // // //new змейка
-            new Odometry(abs, 1000, 0, 0, true),
-            new Odometry(abs, 1000,-1000,0,true), 
-            new Odometry(abs, 1700, -1000, 0, true),
-            new Odometry(abs, 1700, -200, 0, true),
-            new Odometry(abs, 2300, -200, 0, true), 
-            new Odometry(abs, 2300, -1000, 0, true),
-            new Odometry(abs, 3300, -1000, 0, true),
-            new Odometry(abs, 3300, 0, 0, true), 
-            new End(),
+            // new Start(2f),
+            // // // // // //new змейка
+            // // new Odometry(abs, 1000, 0, 0, true),
+            // new Odometry(abs, 0,500,0,true), 
+            // new Odometry(abs, 600, 500, 0, true),
+            // new Odometry(abs, 600, -500, 0, true),
+            // new Odometry(abs, 1200, -500, 0, true), 
+            // new Odometry(abs, 1200, 500, 0, true),
+            // new Odometry(abs, 1800, 500, 0, true),
+            // new Odometry(abs, 1800, -500, 0, true),
+            // new Odometry(abs, 2500, 0, 0, true), 
+            // new End(),
  
-            // // // //захват с земли стоя нет бля сидя или лежа
-            new StartTransition(2f),
-            new OMS(-1, 15, 110, 137),
-            new OMS(-900, 15, -1, -1),
-            new OMS(-1,-1,220,-1),
-            new OMS(-1,-1,210,-1), 
-            new TimerCount(1f),
-            new OMS(0,2,220,-1), 
-            new TimerCount(8f),
-            new End(),
+            //Зона перед деревом
+            // new Start(2f),
+            // new OMS(-1, 15, 110, 137),
+            // new OMS(-900, 15, -1, -1),
+            // new OMS(-1,-1,220,-1),
+            // new OMS(-1,-1,210,-1), 
+            // new TimerCount(1f),
+            // new OMS(0,2,220,-1), 
+            // new TimerCount(8f),
+            // new End(),
 
-            new StartTransition(2f),
-            // //зона дерева нижняя ветка
-            new OMS(-1, 15, 110, 137),
-            new OMS(-500, 15, 110, 137),
-            new OMS(-1,-1,220,137),
-            new OMS(-1,-1,220,137),
-            new TimerCount(1f),
-            new OMS(0,1,-1,-1),
-            new TimerCount(8f),
-            new End(),
+            // new StartTransition(2f),
+            // // //зона дерева нижняя ветка
+            // new OMS(-1, 15, 110, 137),
+            // new OMS(-500, 15, 110, 137),
+            // new OMS(-1,-1,220,137),
+            // new OMS(-1,-1,220,137),
+            // new TimerCount(1f),
+            // new OMS(0,1,-1,-1),
+            // new TimerCount(8f),
+            // new End(),
 
+            // // // // //от старта до зоны
+            // new StartTransition(1f),
+            // new SensorsTest(sonicb,25,0,0),
+            // new Odometry(0, 0, -90),
+            // new SensorsTest(ikr, 12, 0, 1),
+            // new Reset(0,0,0),
 
-            // // // //от старта до зоны
-            new StartTransition(1f),
-            new SensorsTest(sonicb,25,0,0),
-            new Odometry(0, 0, -90),
-            new SensorsTest(ikr, 12, 0, 1),
-            new Reset(0,0,0),
+            // new Odometry(abs, -1755, 910, 180, true),
 
-            new Odometry(abs, -455, 0, 90, true),
-            new Odometry(abs, -455, 870, 90, true), 
+            // new Odometry(abs, -990, 910, 180, true),
 
-            new OMS(-500, 15, 110, -1),
-            new TimerCount(0.5f),
-            new Camera("centre"),
-            new OMS(-900,-1,110,-1),
-            new OMS(-1,-1,-1,-1),
-            new TimerCount(1f), 
-            new OMS(-1,-1,220,-1),
-            new TimerCount(1f),
-            new OMS(0,1,220,-1),
-            new TimerCount(8f),
-            new End(),
+            // new Odometry(rel,-545, -427, 0, false),
+
+            // new OMS(-500, 17, 110, -1),
+            // new TimerCount(0.5f),
+            // new Camera("centre"),
+            // new OMS(-900,-1,110,-1),
+            // new OMS(-1,-1,-1,-1),
+            // new TimerCount(1f), 
+            // new OMS(-1,-1,220,-1),
+            // new TimerCount(1f),
+            // new OMS(0,1,220,-1),
+            // new TimerCount(8f),
+            // new End(),
             
             //от старта до мусорки
-            new StartCloseOMS(2f),
+            new StartCloseOMS(2f), 
              
             new SensorsTest(sonicb,25,0,0),
             new Odometry(0, 0, -90),
             new SensorsTest(ikr, 12, 0, 1),
             new Reset(0,0,0),
 
-            new Odometry(abs, -470, 0, 0, true),
-
-            new Odometry(-400, 0, 0),
-
-            new Odometry(0, 0, -90),
-
+            new Odometry(abs, -250, 0, 90, true),
+            new Odometry(abs, -250, 600, 0, true), 
             new SensorsTest(ikr, 12, 0, 1),
 
-            new Odometry(0, 0, 90), 
+            new Odometry(0,0, 90),
 
-            new Odometry(-400, 0, 0),
-
-            new OMS(-1, 17, 210, 80),
+            new OMS(-1, 13, 210, 80),
             new OMS(-1, -1, 110, 80),
             new TimerCount(0.5f), 
             new End(),

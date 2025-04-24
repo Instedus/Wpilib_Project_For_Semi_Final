@@ -317,37 +317,43 @@ public class Camera implements IState {
         switch (server.nowResult) {
         case (1):
             FINALANS = greenBigApple;
-            StateMachine.TRASH = "AppleTrash";
+            // StateMachine.TRASH = "AppleTrash";
+            StateMachine.TRASH = "UnripTrash";
             StateMachine.countOnGround = 1;
             break;
 
         case (2):
             FINALANS = greenSmallApple;
-            StateMachine.TRASH = "SmallAppleTrash";
+            // StateMachine.TRASH = "SmallAppleTrash";
+            StateMachine.TRASH = "UnripTrash";
             StateMachine.countOnGround = 1;
             break;
 
         case (3):
             FINALANS = greenPear;
-            StateMachine.TRASH = "PearTrash";
+            // StateMachine.TRASH = "PearTrash";
+            StateMachine.TRASH = "UnripTrash";
             StateMachine.countOnGround = 1;
             break;
 
         case (4):
             FINALANS = yellowPear;
-            StateMachine.TRASH = "PearTrash";
+            // StateMachine.TRASH = "PearTrash";
+            StateMachine.TRASH = "UnripTrash";
             StateMachine.countOnGround = 1;
             break;
 
         case (5): 
             FINALANS = redBigApple;
             StateMachine.TRASH = "AppleTrash";
+            // StateMachine.TRASH = "UnripTrash";
             StateMachine.countOnGround = 1;
             break;
 
         case (6):
             FINALANS = redSmallApple;
             StateMachine.TRASH = "SmallAppleTrash"; 
+            // StateMachine.TRASH = "UnripTrash";
             StateMachine.countOnGround = 1;
             break;
 

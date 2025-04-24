@@ -38,7 +38,7 @@ public class StateMachine extends CommandBase{
 
     public StateMachine() 
     {
-        localStates = StatesFinalFinal.states;
+        localStates = StatesAutoFinal.states;
         addRequirements(train);
     }
 

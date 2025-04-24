@@ -37,48 +37,48 @@ public class StatesAutoFinal{
             new SensorsTest(ikr, 12, 0, 1),
             new Reset(0,0,0),
 
-            new Odometry(abs, -1755, 880, 180, true),
+            new Odometry(abs, -1755, 900, 180, true),
 
-            new Odometry(abs, -990, 880, 180, true),
+            new Odometry(abs, -990, 900, 180, true),
             // new Odometry(abs, -455, 870, 90, true), 
 
-            new Reset(-990, 880, 180),
+            new Reset(-990, 900, 180),
 
-            new Odometry(240, 0, 0), // поменять под зону
+            new Odometry(350, 0, 0), // поменять под зону
              
             new OMS(-500, 15, 110,-1),
             new TimerCount(0.5f),
             new Camera("centre"),
             new Camera("main_detect"),  
-            new WhereElementLogic(true,90),
+            new WhereElementLogic(true,180),
             new InitializeLogicAuto(),
             
             new TransitionAuto(),
         }, 
         {// from checkpoint to zone 1 // 1
             
-            new Odometry(abs, -1755, 880, 180, true),
+            new Odometry(abs, -1755, 900, 180, true),
 
-            new Odometry(abs, -990, 880, 180, true),
+            new Odometry(abs, -990, 900, 180, true),
             // new Odometry(abs, -455, 870, 90, true), 
 
-            new Reset(-990, 880, 180),
+            new Reset(-990, 900, 180),
 
             new TransitionAuto(),   
         },
         { // from checkpoint to zone 2 // 2
-            new Odometry(abs, -1755, 872, 180, true),
+            new Odometry(abs, -1755, 900, 180, true),
 
-            new Odometry(abs, -2406, 872,180,true),
+            new Odometry(abs, -2406, 900,180,true),
 
-            new Reset(-2406, 872, 180),
+            new Reset(-2406, 900, 180),
           
             new TransitionAuto(),  
         },
-        {
-            new Odometry(abs, -1897, 150, 0, true),
+        { // from checkpoint to zone 3
+            new Odometry(abs, -1930, 175, 0, true),
 
-            new Reset(-1897, 150, 0), 
+            new Reset(-1930, 175, 0),
 
             new TransitionAuto(),
         },
@@ -103,13 +103,13 @@ public class StatesAutoFinal{
         {// frist tree to checpoint // 8
             new SetOMS(5),
             
-            new Odometry(500, 0, 0),
+            // new Odometry(500, 0, 0),
 
             new Odometry(abs, -470, 0, 90, true),
 
             new SensorsTest(sonicb,25,0,0),
             new Odometry(0, 0, -90),
-            new SensorsTest(ikr, 12, 0, 1),
+            new SensorsTest(ikr, 12, 0, 1), 
             new Reset(0,0,0),
 
             new TransitionAuto(),
@@ -118,7 +118,7 @@ public class StatesAutoFinal{
 
             new SetOMS(5), 
 
-            new Odometry(-500, 0, 0),
+            // new Odometry(-500, 0, 0),
  
              new Odometry(abs, -470, 0, 90, true),
   
@@ -133,29 +133,19 @@ public class StatesAutoFinal{
 
             new SetOMS(5), 
 
+            new Odometry(abs, -1000, 175, 0, true),
+
             new Odometry(abs, -470, 0, 90, true),
 
             new SensorsTest(sonicb,25,0,0),
             new Odometry(0, 0, -90),
-            new SensorsTest(ikr, 12, 0, 1), 
+            new SensorsTest(ikr, 12, 0, 1),
             new Reset(0,0,0),
 
             new TransitionAuto(),
         },
         { // 11 CheckPointToAppleTrash
-            new Odometry(abs, -3227, 576, 180, true),
-            new SensorsTest(ikr, 12, 0, 1),
-            new Reset(-1, -1, 180),
-            new Odometry(0, 0, 90),
-            new OMS(-1, 21, 225, 80),
-            new OMS(-1, -1, 110, 80),
-            new TimerCount(0.5f), 
-            // new OMS(-1, 1, 110, 80), 
-            new SetOMS(3),
-
-            new TransitionAuto(), 
-        },
-        { // 12 CheckPointToPearTrash 
+           
             new Odometry(abs, -3227, 576, -90, true),
 
             new Odometry(abs, -2900, 576, -90, true),
@@ -168,10 +158,24 @@ public class StatesAutoFinal{
 
             // new Odometry(400, 0, 0),
 
-            new OMS(-1, 21, 225, 80),
+            new OMS(-1, 13, 225, 80),
             new OMS(-1, -1, 110, 80),
             new TimerCount(0.5f), 
             // new OMS(-1, 1, 110, 80),
+            new SetOMS(3),
+
+            new TransitionAuto(), 
+        },
+        { // 12 CheckPointToPearTrash 
+            
+            new Odometry(abs, -3227, 576, 180, true),
+            new SensorsTest(ikr, 12, 0, 1),
+            new Reset(-1, -1, 180),
+            new Odometry(0, 0, 90),
+            new OMS(-1, 13, 225, 80),
+            new OMS(-1, -1, 110, 80),
+            new TimerCount(0.5f), 
+            // new OMS(-1, 1, 110, 80), 
             new SetOMS(3),
 
             new TransitionAuto(),
@@ -179,13 +183,13 @@ public class StatesAutoFinal{
 
         { // 13 CheckPointToUnripTrash
 
-           new Odometry(abs, -300, 0, 90, true),
-            new Odometry(abs, -300, 870, 0, true), 
+           new Odometry(abs, -250, 0, 90, true),
+            new Odometry(abs, -250, 600, 0, true), 
             new SensorsTest(ikr, 12, 0, 1),
 
             new Odometry(0,0, 90),
 
-            new OMS(-1, 17, 225, 80),
+            new OMS(-1, 13, 225, 80),
             new OMS(-1, -1, 110, 80),
             new TimerCount(0.5f), 
             // new OMS(-1, 1, 110, 80),
@@ -205,7 +209,7 @@ public class StatesAutoFinal{
 
             new Odometry(0, 0, 90),
             // new Odometry(-350, 0, 0),
-            new OMS(-1, 21, 225, 80),
+            new OMS(-1, 13, 225, 80),
             new OMS(-1, -1, 110, 80),
             new TimerCount(0.5f), 
             // new OMS(-1, 1, 110, 80),
@@ -215,6 +219,8 @@ public class StatesAutoFinal{
         },
         { // 15 AppleTrashToCheckPoint
             
+            new Odometry(abs, -3227, 576, 0, true),
+
             new Odometry(abs, -470, 0, 90, true),
 
             new SensorsTest(sonicb,25,0,0),
@@ -226,8 +232,6 @@ public class StatesAutoFinal{
         },
         { // 16 PearTrashToCheckPoint
         
-            new Odometry(abs, -3227, 576, 0, true),
-
             new Odometry(abs, -470, 0, 90, true),
 
             new SensorsTest(sonicb,25,0,0),
@@ -276,10 +280,10 @@ public class StatesAutoFinal{
             // new Camera("centre"),
             new OMS(-1,-1,110,-1),
             new TimerCount(1f),
-            new OMS(-1,-1,222,-1),
+            new OMS(-1,-1,228,-1),
             new TimerCount(0.5f),
             // new SetOMS(0,1,97,-1,0),
-            new OMS(0,1,222,-1),
+            new OMS(0,1,228,-1),
             // new SetOMS(4),
             new TransitionAuto(),  
         }, 
@@ -290,10 +294,10 @@ public class StatesAutoFinal{
             // new Camera("centre"),
             new OMS(-1,-1,110,-1),
             new TimerCount(1f),
-            new OMS(-1,-1,225,-1),
+            new OMS(-1,-1,228,-1),
             new TimerCount(0.5f),
             // new SetOMS(0,1,97,-1,0),
-            new OMS(0,1,225,-1),
+            new OMS(0,1,228,-1),
             // new SetOMS(4),
             new TransitionAuto(),
         },
@@ -325,7 +329,7 @@ public class StatesAutoFinal{
         },
         { //25 scan third zone
 
-            new OMS(-2, 15, 110,-1),
+            new OMS(-2, 15, 110,-1), 
             new TimerCount(0.5f),
             new Camera("centre"),
             new Camera("main_detect"), 
@@ -339,7 +343,7 @@ public class StatesAutoFinal{
             new OMS(-2, 15, 110,-1),
             new TimerCount(0.5f),
             new Camera("centre"),
-            new Camera("main_detect_tree"),
+            new Camera("main_detect"),
             new WhereElementLogic(false,180), 
             new InitializeLogicAuto(),
             // new OMS(-1,18,-1,-1),
@@ -351,7 +355,7 @@ public class StatesAutoFinal{
             new OMS(-2, 15, 110,-1),
             new TimerCount(0.5f), 
             new Camera("centre"),
-            new Camera("main_detect_tree"), 
+            new Camera("main_detect"), 
             new WhereElementLogic(false,180),
             new InitializeLogicAuto(),
             // new OMS(-1,18,-1,-1), 
@@ -363,7 +367,7 @@ public class StatesAutoFinal{
             new OMS(-2, 15, 110,-1),
             new TimerCount(0.5f),
             new Camera("centre"),
-            new Camera("main_detect_tree"),
+            new Camera("main_detect"),
             new WhereElementLogic(false,0),
             new InitializeLogicAuto(), 
             // new OMS(-1,18,-1,-1),

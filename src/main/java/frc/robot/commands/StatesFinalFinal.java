@@ -62,9 +62,9 @@ public class StatesFinalFinal{
         },
         { // from checkpoint to zone 3 // 3
 
-            new Odometry(abs, -1897, 175, 0, true),
+            new Odometry(abs, -1895, 167, 0, true),
 
-            new Reset(-1897, 175, 0),
+            new Reset(-1895, 167, 0),
  
             new Transition(),    
         }, 
@@ -125,21 +125,6 @@ public class StatesFinalFinal{
             new Transition(),
         },
         { // 11 CheckPointToAppleTrash
-            
-            new Odometry(abs, -3227, 576, 180, true),
-            new SensorsTest(ikr, 12, 0, 1),
-            new Reset(-1, -1, 180),
-            new Odometry(0, 0, 90),
-            new OMS(-1, 14, 225, 80),
-            new OMS(-1, -1, 110, 80),
-            new TimerCount(0.5f), 
-            // new OMS(-1, 1, 110, 80), 
-            new SetOMS(3),
-
-            new Transition(), 
-        },
-        { // 12 CheckPointToPearTrash 
-
             new Odometry(abs, -3227, 576, -90, true),
 
             new Odometry(abs, -2900, 576, -90, true),
@@ -156,6 +141,19 @@ public class StatesFinalFinal{
             new OMS(-1, -1, 110, 80),
             new TimerCount(0.5f), 
             // new OMS(-1, 1, 110, 80),
+            new SetOMS(3),
+            
+            new Transition(), 
+        },
+        { // 12 CheckPointToPearTrash 
+            new Odometry(abs, -3227, 576, 180, true),
+            new SensorsTest(ikr, 12, 0, 1),
+            new Reset(-1, -1, 180),
+            new Odometry(0, 0, 90),
+            new OMS(-1, 14, 225, 80),
+            new OMS(-1, -1, 110, 80),
+            new TimerCount(0.5f), 
+            // new OMS(-1, 1, 110, 80), 
             new SetOMS(3),
 
             new Transition(), 
@@ -255,7 +253,7 @@ public class StatesFinalFinal{
         },
         { // 20
             // oms fruit in 
-            new OMS(-2, 17, 110,-1),
+            new OMS(-2, 16, 110,-1),
             new TimerCount(0.5f),
             new Camera("centre"), 
             // new Camera("main_detect"), 
@@ -270,7 +268,7 @@ public class StatesFinalFinal{
         }, 
         { // 21
             // oms fruit in small  
-            new OMS(-2, 17, 110,-1),
+            new OMS(-2, 16, 110,-1),
             new TimerCount(0.5f),
             new Camera("centre"),
             // new Camera("main_detect"),
